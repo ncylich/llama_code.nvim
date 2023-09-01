@@ -1,3 +1,5 @@
+# A file used for automating the renaming process within each file
+
 import sys
 import re
 

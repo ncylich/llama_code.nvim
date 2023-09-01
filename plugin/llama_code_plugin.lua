@@ -19,3 +19,8 @@ vim.api.nvim_create_user_command(
   llama_code_plugin.generic_greet,
   {})
 
+vim.api.nvim_creat_user_command(
+  "LlamaSuggest",
+  llama_code_plugin.llama_suggest,
+  {})
+
