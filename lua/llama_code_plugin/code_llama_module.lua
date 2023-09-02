@@ -4,7 +4,7 @@ function code_llama_module.greeting(name)
    return "Hello " .. name
 end
 
-LLAMA_CALL = "/Users/noahcylich/LLAMA2/llama.cpp/main -m ./models/7B/ggml-model-q4_0.bin"
+LLAMA_CALL = "~/LLAMA2/llama.cpp/main -m ~/LLAMA2/llama.cpp/models/7B/ggml-model-q4_0.bin"
 
 local suggested_code, curr_code = nil, nil
 
