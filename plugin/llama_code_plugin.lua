@@ -15,7 +15,7 @@ vim.g.loaded_llama_code_plugin = 1
 local llama_code_plugin = require("llama_code_plugin")
 
 vim.api.nvim_create_user_command(
-  "MyAwesomePluginGenericGreet",
+  "LlamaCodeGenericGreet",
   llama_code_plugin.generic_greet,
   {})
 

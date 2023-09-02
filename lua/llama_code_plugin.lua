@@ -18,7 +18,7 @@ function llama_code_plugin.setup(options)
 
    -- do here any startup your plugin needs, like creating commands and
    -- mappings that depend on values passed in options
-   vim.api.nvim_create_user_command("MyAwesomePluginGreet", llama_code_plugin.greet, {})
+   vim.api.nvim_create_user_command("LlamaCodeGreet", llama_code_plugin.greet, {})
 end
 
 function llama_code_plugin.is_configured()
