@@ -14,7 +14,13 @@ end
 
 local function llama_request(request)
   local cmd = LLAMA_CALL.." -p "..request
-  return vim.fn.system(cmd)
+  response = vim.fn.system(cmd)
+  if 'error: unknown argument' == string.sub(response, 1, 23) then 
+    print('The request could not be processed')
+    print('This was the cmd the system entered:\n'..cmd)
+    return nil
+  end
+  return response
 end
 
 local function check_response(response)
@@ -40,7 +46,9 @@ function code_llama_module.llama_suggest()
   curr_code = vim.api.nvim_get_current_line()
   local request = 'Help complete the following code - the file ends in "'..language..'":\n'..curr_code
   suggested_code = llama_request(request)
-  prompt_user()
+  if suggested_code ~= nil then
+    prompt_user()
+  end
 end
 
 return code_llama_module
