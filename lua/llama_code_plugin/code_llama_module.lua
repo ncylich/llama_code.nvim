@@ -13,41 +13,8 @@ local function get_file_type()
 end
 
 local function llama_request(request)
-  local cmd = LLAMA_CALL.."-p"..request
+  local cmd = LLAMA_CALL.." -p "..request
   return vim.fn.system(cmd)
-end
-
-local function update()
-  if suggested_code ~= nil and curr_code ~= nil then
-    vim.api.nvim_set_current_line(suggested_code)
-    suggested_code, curr_code = nil, nil
-  end
-end
-
--- popup.menu caused an error: field menu is nil?
--- Try launching terminal instead of using popup?
-local function create_popup()
-  local popup = require('popup')
-
-  local lines = {
-    'current code: '..curr_code,
-    'suggested code: '..suggested_code,
-  }
-
-  local opts = {
-    title = 'Code Llama Suggestion',
-    line = 10,
-    -- col = 20,
-    border = true
-  }
-
-  local items = {
-    'Implement',
-    'Disregard',
-    {text = 'Option 3', code = 'update()'}
-  }
-
-  local win_id, win_opts = popup.create(lines, opts, items)
 end
 
 local function check_response(response)
