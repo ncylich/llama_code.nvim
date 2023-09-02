@@ -13,9 +13,9 @@ local function get_file_type()
 end
 
 local function llama_request(request)
-  local cmd = LLAMA_CALL.." -p "..request
-  response = vim.fn.system(cmd)
-  if 'error: unknown argument' == string.sub(response, 1, 23) then 
+  local cmd = LLAMA_CALL..' -p "'..request..'"'
+  local response = vim.fn.system(cmd)
+  if 'error: unknown argument' == string.sub(response, 1, 23) then
     print('The request could not be processed')
     print('This was the cmd the system entered:\n'..cmd)
     return nil
