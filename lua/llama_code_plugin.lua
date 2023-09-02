@@ -44,5 +44,9 @@ function llama_code_plugin.generic_greet()
    print("Hello, unnamed friend!")
 end
 
+function llama_code_plugin.llama_suggest()
+  code_llama_module.llama_suggest()
+end
+
 llama_code_plugin.options = nil
 return llama_code_plugin
