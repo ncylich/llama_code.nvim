@@ -47,7 +47,7 @@ local function create_popup()
     {text = 'Option 3', code = 'update()'}
   }
 
-  local win_id, win_opts = popup.menu(lines, opts, items)
+  local win_id, win_opts = popup.create(lines, opts, items)
 end
 
 local function check_response(response)
